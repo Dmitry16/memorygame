@@ -7,7 +7,7 @@ class TilesSet extends Component {
 
 		const tilesArr = [];
 
-		for (let i = 1; i < 16; i ++) {
+		for (let i = 1; i <= 16; i ++) {
 			tilesArr.push(
 				<Tile content='content' />
 			);

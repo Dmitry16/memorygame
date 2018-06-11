@@ -12,7 +12,9 @@ class Tile extends Component {
 	render() {
 		return(
 			<div className='tile'>
-				{ this.props.content }
+				<div className='tile_content'>
+					{ this.props.content }
+				</div>
 			</div>
 		);
 	}
