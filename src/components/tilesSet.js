@@ -39,8 +39,8 @@ class TilesSet extends Component {
 	}
 
 	handleClick(e) {
-		//проверяем закрыта плитка (окно) или нет. если в имени класса нет 'open', то закрыта и
-		//тогда добавляем класс open, который уже прописан в css (здесь еще нет) и который откроет плитку
+		//проверяем закрыта плитка (окно) или нет. если в имени класса нет 'open', то значит закрыта и
+		//тогда добавляем класс open, который уже прописан в css (у меня еще нет) и который откроет плитку
 		if (e.target.className === 'tile_content') {
 			e.target.classList.add('open');
 			this.numberOpenedTilesInOneTry++;
@@ -63,11 +63,11 @@ class TilesSet extends Component {
 				e.target.classList.remove('open');
 				console.log('this.openedTile', this.openedTile);
 				this.openedTile = '';
+				//Начало блока 2
+				//дальше здесь вызываем редаксовский dispatch и диспатчим экшин
+				//dispatch(incrementTriesCounter()), где incrementTriesCounter
+				//(или как назовешь)- это экшин (в папке actions) который увеличивает счетчик попыток
 			}
-			//дальше здесь (в теле этого блока if) вызываем редаксовский
-			//dispatch(checkTile(e.target.data, this.numberOpenedTilesInOneTry)), где checkTile
-			//(или как назовешь)- это экшин (в папке actions) в котором нужно прописать логику в которой
-			//происходит обработка передаваемых ему данных:
 		} else {
 			console.log('Next Try');
 			this.numberOpenedTilesInOneTry = 0;
