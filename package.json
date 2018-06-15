@@ -10,7 +10,7 @@
 		"react-scripts": "1.1.1",
 		"redux": "^3.7.2"
   },
-	"homepage": "https://dmitry16.github.io/tripsorter/",
+	"homepage": "https://dmitry16.github.io/memorygame/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
