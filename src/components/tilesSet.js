@@ -52,6 +52,8 @@ class TilesSet extends Component {
 
 			} else if (this.openedTile.dataset.content === e.target.dataset.content) {
 				console.log('GOOOD TRY!!!');
+				this.openedTile.style.color = 'red';
+				e.target.style.color = 'red';
 				this.numberOpenedTilesInOneTry = 0;
 				this.openedTile = '';
 
@@ -61,7 +63,6 @@ class TilesSet extends Component {
 				//закрываем обе плитки
 				this.openedTile.classList.remove('open');
 				e.target.classList.remove('open');
-				console.log('this.openedTile', this.openedTile);
 				this.openedTile = '';
 				//Начало блока 2
 				//дальше здесь вызываем редаксовский dispatch и диспатчим экшин
@@ -69,7 +70,7 @@ class TilesSet extends Component {
 				//(или как назовешь)- это экшин (в папке actions) который увеличивает счетчик попыток
 			}
 		} else {
-			console.log('Next Try');
+			console.log('This tile is already opened!');
 			this.numberOpenedTilesInOneTry = 0;
 		}
 	}
