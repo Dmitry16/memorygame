@@ -1,6 +1,6 @@
 export default function incrementTriesCounter() {
 
 	return {
-		type: 'INCREMENT_COUNTER';
+		type: 'INCREMENT_COUNTER'
 	}
 }

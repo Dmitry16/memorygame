@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import incrementTriesCounter from '../actions/incrementTriesCounter';
 import Tile from './tile';
 
 class TilesSet extends Component {
@@ -22,8 +23,6 @@ class TilesSet extends Component {
 			this.randContArr.push(this.tilesContArr[randomNum]);
 			this.counter++;
 		}
-		console.log('this.randContArr::', this.randContArr);
-		// return this.randContArr;
 	}
 
 	renderTiles() {
@@ -52,8 +51,8 @@ class TilesSet extends Component {
 
 			} else if (this.openedTile.dataset.content === e.target.dataset.content) {
 				console.log('GOOOD TRY!!!');
-				this.openedTile.style.color = 'red';
-				e.target.style.color = 'red';
+				this.openedTile.style.color = 'blue';
+				e.target.style.color = 'blue';
 				this.numberOpenedTilesInOneTry = 0;
 				this.openedTile = '';
 
@@ -68,6 +67,7 @@ class TilesSet extends Component {
 				//дальше здесь вызываем редаксовский dispatch и диспатчим экшин
 				//dispatch(incrementTriesCounter()), где incrementTriesCounter
 				//(или как назовешь)- это экшин (в папке actions) который увеличивает счетчик попыток
+				this.props.dispatch(incrementTriesCounter());
 			}
 		} else {
 			console.log('This tile is already opened!');
@@ -76,6 +76,8 @@ class TilesSet extends Component {
 	}
 
 	render() {
+
+		console.log('tilesSet render', this.props);
 
 		return(
 			<div className='tiles_wrapper' onClick={e => this.handleClick(e)}>
